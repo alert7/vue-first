@@ -88,6 +88,7 @@
             if (result.body.status === 0) {
               // this.goodslist = result.body.message;
               this.goodslist = this.goodslist.concat(result.body.message);
+              console.log(this.goodslist)
             }
         });
       },

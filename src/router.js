@@ -30,7 +30,6 @@ var router = new VueRouter({
     { path: '/home/goodsinfo/:id', component: GoodsInfo, name: 'goodsInfo' },
     { path: '/home/goodsdesc/:id', component: GoodsDesc, name: 'goodsdesc' },
     { path: '/home/goodcomment/:id', component: GoodsComment, name: 'goodscomment' }
-
   ],
   linkActiveClass: 'mui-active' //覆盖默认路由高亮类，默认类router-link-active
 })

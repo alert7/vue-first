@@ -93,7 +93,7 @@ import numberbox from '../subcomponents/goodsinfo_number.vue'
         }],
         goodsinfo: {},
         ballFlag: false,
-        selectCount: 1
+        selectedCount: 1
       }
     },
     created() {
@@ -104,18 +104,31 @@ import numberbox from '../subcomponents/goodsinfo_number.vue'
         this.$http.get("http://localhost:3000/" + this.id).then(result => {
             if (result.body.status === 0) {
               this.goodsinfo = result.body.message[0];
+              console.log("goodsinfo" + this.goodsinfo)
             }
         });
       },
+      //图文介绍
       goDesc(id) {
         this.$router.push({ name: "goodsdesc", params: {id} });
       },
+      // 评论
       goComment(id) {
         this.$router.push({ name: "goodscomment", params: {id} });
       },
+      // 添加到购物车
       addShopCar() {
-        this.ballFlag = !this.ballFlag
+        this.ballFlag = !this.ballFlag;
+        
+        var goodsinfo = {
+          id: this.id,
+          count: this.selectedCount,
+          price: this.goodsinfo.sell_price,
+          selected: true
+        };
+        this.$store.commit("addToCar", goodsinfo)
       },
+      // 添加小球动画
       beforeEnter(el) {
         el.style.transform = "translate(0, 0)";
       },
@@ -128,7 +141,6 @@ import numberbox from '../subcomponents/goodsinfo_number.vue'
         const xDist = badgePosition.left - ballPosition.left;
         const yDist = badgePosition.top - ballPosition.top;
         
-
         el.style.transform = `translate(${xDist}px, ${yDist}px)`;
         el.style.transition = "all 0.5s cubic-bezier(.4,-0.3,1,.68)";
         done()
