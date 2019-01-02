@@ -1,5 +1,5 @@
 ###拿到文件先npm i  
-###上传到github
+###上传到github   
     -git add .
     -git commit -m "更改的信息"
     -git push
@@ -13,4 +13,4 @@
 ###手机上调试
     -  package.json里的dev里加入 --host + ip
 ###注意事项
-    -在引用插件时要注意导入插件，内部引用的时候要用components
+    -在引用插件时要注意导入插件，内部引用的时候要用components。
