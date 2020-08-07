@@ -85,6 +85,6 @@
     font-size: 11px;
     display: block;
     overflow: hidden;
-    text-overflow: ellipsis;
+    // text-overflow: ellipsis;
 }
 </style>

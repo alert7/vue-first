@@ -1,10 +1,11 @@
 ###拿到文件先npm i  
+
 ###上传到github   
     *-git add .
     *-git commit -m "更改的信息"
     *-git push
     
- ###创建假地址
+ ###创建一个假地址
     *-npm install -g json-server
     *-npm run mock
     *-package.json加入
